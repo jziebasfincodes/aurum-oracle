@@ -1,0 +1,25 @@
+{
+  "node_type": "aggregator",
+  "server_port": "9000",
+  "storage_path": "./aurum_ledger.dat",
+  "key_path": "./node_private_key.pem",
+  "oracle_sources": [
+    "http://localhost:8080",
+    "http://oracle-node-2:8080",
+    "http://oracle-node-3:8080"
+  ],
+  "replication_peers": [
+    "http://YOUR_SERVER_IP:8081",
+    "http://YOUR_PEER_IP:8081"
+  ],
+  "cosmos": {
+    "enabled": true,
+    "chain_id": "cosmoshub-4",
+    "rpc_endpoint": "https://rpc.cosmos.network:26657",
+    "wallet_address": "cosmos1YOUR_WALLET_ADDRESS"
+  },
+  "api_gateway": {
+    "demo_limit": 60,
+    "pro_limit": 600
+  }
+}

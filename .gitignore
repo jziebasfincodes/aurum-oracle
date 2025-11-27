@@ -1,0 +1,39 @@
+# Sensitive files
+*.pem
+*.key
+*_private_key.*
+aurum_ledger.dat
+tamper_events.log
+node.log
+backups/
+
+# Binaries
+bin/aurum-aggregator*
+bin/aurum-gateway*
+bin/aurum-node*
+aurum-aggregator
+aurum-gateway
+aurum-oracle
+aurum_core
+
+# Environment files
+.env
+.env.local
+aurum-gcp/
+
+# Virtual environments
+aurumvenv/
+venv/
+__pycache__/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Backups
+*.backup
