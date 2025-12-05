@@ -19,7 +19,7 @@
     "wallet_address": "cosmos1YOUR_WALLET_ADDRESS"
   },
   "api_gateway": {
-    "demo_limit": 60,
-    "pro_limit": 600
+    "demo_limit": 100,
+    "pro_limit": 60000,
   }
 }

@@ -1,13 +1,11 @@
 PolyForm Noncommercial License 1.0.0
 
 PROTOTYPE DISCLAIMER:
-This software is a demonstration prototype for the AURUM Oracle system. The Licensor reserves the exclusive right to augment, modify, or commercialize features in the future.
+This software is a demonstration prototype for the AURUM Oracle system. Certain advanced security, consensus, and recovery features available in the production environment may be removed or simulated in this repository. The Licensor reserves the exclusive right to augment, modify, or commercialize these features in the future.
 
 Rights Granted
 
 The "Licensor" (AURUM Developers) grants you the following rights for the software:
-
-You may copy and modify the software.
 
 You may run the software for personal, educational, or evaluation purposes.
 

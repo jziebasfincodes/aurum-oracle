@@ -29,7 +29,7 @@ var (
 		"YOUR_DEMO_KEY": {Key: "YOUR_DEMO_KEY", ClientName: "Free User", RateLimit: 60, Tier: "free"},
 		
 		// PAID TIER (Real-Time)
-		"YOUR_PAID_KEY": {Key: "YOUR_PAID_KEY", ClientName: "Hedge Fund A", RateLimit: 1000, Tier: "paid"},
+		"YOUR_PAID_KEY": {Key: "YOUR_PAID_KEY", ClientName: "Paid User A", RateLimit: 1000, Tier: "paid"},
 	}
 	rateLimiter = &RateLimiter{
 		requests: make(map[string][]time.Time),

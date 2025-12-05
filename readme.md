@@ -1,57 +1,88 @@
-# AURUM Oracle 🦅
+# AURUM Oracle
 
-**The World's First Multi-Cloud, Dual-Chain Gold Oracle.**
+## A Multi-Cloud, Dual-Chain Gold Oracle
 
-AURUM utilizes a proprietary Active Defense mechanism to secure Real-World Asset (RWA) data against 51% attacks and data corruption. We aggregate price data across AWS, Azure, and Google Cloud, anchoring every update to the Cosmos Blockchain for thermodynamic certainty.
+AURUM is a sovereign oracle network that aggregates real-world asset prices across AWS, Azure, and Google Cloud, anchoring every update to the Cosmos Blockchain for cryptographic certainty.
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
-AURUM moves beyond the single-server oracle model. We shard consensus across physically separated cloud providers to eliminate single points of failure.
+We shard consensus across physically separated cloud providers to eliminate single points of failure. Our proprietary Active Defense system protects the network from data corruption and hostile takeovers.
 
-```
+```mermaid
 graph TD
-    subgraph "Layer 1: The Truth Sources (Workers)"
-        A[AWS Node] -->|Price Data| D[Aggregator]
-        B[Azure Node] -->|Price Data| D
-        C[GCP Node] -->|Price Data| D
-    end
-
-    subgraph "Layer 2: The Brain (GCP Leader)"
-        D[Aggregator] -- Mint Block --> E[(AurumDB Ledger)]
-        D -- Sign & Hash --> E
-        E -- Anchor Hash --> F[Cosmos Blockchain]
-    end
-
-    subgraph "Layer 3: The Gatekeeper"
-        G[API Gateway] -->|Auth & Rate Limit| D
-        H[Sentinel Watcher] -.->|Monitors| D
-        H -.->|Heals| E
-    end
-
-    subgraph "Layer 4: The World"
-        User[Client App] -->|Request Price| G
-        Verifier[Audit Script] -->|Verify Proof| G
-    end
-
-    style D fill:#f9f,stroke:#333,stroke-width:4px
-    style E fill:#ff9,stroke:#333,stroke-width:2px
-    style F fill:#9cf,stroke:#333,stroke-width:2px
+    Sources[External APIs] --> Nodes[Worker Nodes - AWS/Azure/GCP]
+    Nodes --> Aggregator[Aggregator Brain]
+    Aggregator --> Ledger[(Immutable Ledger)]
+    Aggregator --> Cosmos[Cosmos Anchor]
+    User --> Gateway[API Gateway]
+    Gateway --> Aggregator
 ```
 
 ---
 
-## 🚀 Core Features
+## Core Features
 
-- **Multi-Cloud Consensus**: Nodes run on physically separated infrastructure to eliminate single points of failure.
-- **Dual-Chain Verification**: High-frequency internal ledger for sub-second latency, anchored to Cosmos for public finality.
-- **Active Defense**: Automated sentinels detect tampering and self-heal corrupted binaries in real-time.
-- **Tiered Access**: Free historical data for backtesting; Paid real-time streams for institutional trading.
+### Multi-Cloud Consensus
+Three independent cloud providers voting on the price of Gold.
+
+### Dual-Chain Verification
+High-frequency internal ledger for sub-second latency, anchored to Cosmos for public finality.
+
+### Active Defense
+Automated sentinels detect tampering and self-heal corrupted binaries in real-time.
+
+### Tiered Access
+- **Free Tier**: Historical data for backtesting
+- **Paid Tier**: Real-time streams for institutional use
 
 ---
 
-## ⚡ Quick Start
+## The V3 Revolution: 51% Immunity
+
+Traditional blockchains (PoW/PoS) are vulnerable to 51% attacks because their security is static—limited by energy or capital.
+
+AURUM V3 introduces the **Living Chain**:
+
+1. **Detection**
+2. **Response**
+3. **Dilution**
+4. **Neutralization**
+
+This proprietary technology is currently under R&D.
+
+---
+
+## Join the Network
+
+We are actively seeking partners to expand the ecosystem.
+
+### For Validators
+
+Help secure the network and earn rewards.
+
+**Requirements:**
+- Linux Server (Ubuntu 20.04+)
+- 4GB RAM minimum
+
+**Rewards:** Network participation incentives
+
+**Get Started:** Contact us for the Validator Handbook
+
+### For Data Clients
+
+Access high-fidelity, multi-source gold data for your applications.
+
+**Historical Data:** Available via our Free Tier API for backtesting and analysis
+
+**Real-Time Data:** Enterprise-grade streams available for institutional partners
+
+**Integration:** See our API Documentation below
+
+---
+
+## Quick Start
 
 ### Prerequisites
 
@@ -60,14 +91,14 @@ graph TD
 
 ### Installation
 
-**1. Clone the repo**
+Clone the repository:
 
 ```bash
-git clone https://github.com/jziebasfincodes/aurum-oracle.git
+git clone https://github.com/YOUR_USERNAME/aurum-oracle.git
 cd aurum-oracle
 ```
 
-**2. Build Binaries**
+Build binaries:
 
 ```bash
 # Builds Node, Aggregator, and Gateway
@@ -76,7 +107,7 @@ go build -o bin/aurum-aggregator cmd/aggregator/main.go cmd/aggregator/aurum_cor
 go build -o bin/aurum-gateway cmd/gateway/main.go
 ```
 
-**3. Run Verification**
+Run verification:
 
 ```bash
 python3 aurum_verifier.py
@@ -84,37 +115,25 @@ python3 aurum_verifier.py
 
 ---
 
-## 🛡️ Security Demo
+## Security Demo
 
-to simulate an attack or hostile takeover, run the included penetration test suite:
+To simulate a 51% attack or hostile takeover, run the included penetration test suite:
 
 ```bash
 ./scripts/demo_attack.sh <TARGET_IP>
 ```
 
 This script will:
-1. Verify Consensus.
-2. Attempt to inject malicious blocks (Blocked by Kernel).
-3. Attempt to delete binaries (Restored by Sentinel).
+- Verify consensus
+- Attempt to inject malicious blocks (blocked by kernel)
+- Attempt to delete binaries (restored by sentinel)
 
 ---
 
-## 🔮 The Vision (Roadmap)
+## License
 
-This repository represents **AURUM V1**. We are currently raising funds to develop:
+see liscense file for details
 
-- **V2 (Privacy)**: Zero-Knowledge Proofs for private price validation. As well as multi-sopurce aggregation. As well as better data speeds and quality. 
-- **V3 (The Living Chain)**: A proprietary 51% Immunity Protocol that uses elastic cloud scaling to physically dilute hostile voting power in real-time.
+## Contact
 
-We are seeking **Validators and Partners**. Contact Us to join the testnet.
-
----
-
-## 📜 License
-
-**PolyForm Noncommercial License 1.0.0**
-
-- ✅ You **MAY** use the **DATA** from this oracle for any purpose (including commercial trading).
-- ❌ You **MAY NOT** resell, fork, or host this **CODE** as a competing commercial service.
-
-For commercial licensing inquiries, contact: **jeremyzieba@pm.me**
+jeremyzieba@pm.me

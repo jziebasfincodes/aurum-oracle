@@ -3,12 +3,12 @@
 # Usage: ./scripts/demo_attack.sh
 
 # --- CONFIGURATION (EDIT THIS BEFORE RECORDING) ---
-# Put your real Google Cloud IP here. It will NOT show in the video.
+# Put your real Google Cloud IP here. 
 TARGET_IP="YOUR_SERVER_IP" 
 SSH_USER="YOUR_USERNAME"
 # --------------------------------------------------
 
-# Visual Masking (Shows ***.***.***.123)
+# Visual Masking (Shows ***.***.***.***)
 if [[ "$TARGET_IP" =~ ([0-9]+)$ ]]; then
   LAST_OCTET="${BASH_REMATCH[1]}"
   MASKED_IP="***.***.***.$LAST_OCTET"
