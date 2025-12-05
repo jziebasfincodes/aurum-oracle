@@ -74,9 +74,9 @@ Help secure the network and earn rewards.
 
 Access high-fidelity, multi-source gold data for your applications.
 
-**Historical Data:** Available via our Free Tier API for backtesting and analysis
+**Historical Data:** Available via our Free Tier API 
 
-**Real-Time Data:** Enterprise-grade streams available for institutional partners
+**Real-Time Data:** Enterprise-grade streams available for partners
 
 **Integration:** See our API Documentation below
 
